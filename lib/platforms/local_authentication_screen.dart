@@ -67,6 +67,8 @@ class _LocalAuthenticationScreenState extends State<LocalAuthenticationScreen> {
                     localizedReason: 'Scan your fingerprint to authenticate',
                     useErrorDialogs: true,
                     stickyAuth: true);
+                // Android does'nt allow using screenlock and system pin
+                // its only available in latest version of this package
               },
             )
           ],

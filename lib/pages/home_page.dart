@@ -1,11 +1,14 @@
 import 'package:WireFrameFlutter/platforms/barcode_scanner_screen.dart';
 import 'package:WireFrameFlutter/platforms/file_selector_screen.dart';
+import 'package:WireFrameFlutter/platforms/geolocation_screen.dart';
 import 'package:WireFrameFlutter/platforms/image_cropping_screen.dart';
 import 'package:WireFrameFlutter/platforms/image_picker_screen.dart';
 import 'package:WireFrameFlutter/platforms/local_authentication_screen.dart';
 import 'package:WireFrameFlutter/platforms/local_notification_screen.dart';
 import 'package:WireFrameFlutter/platforms/pdf_viewer_screen.dart';
 import 'package:WireFrameFlutter/platforms/share_screen.dart';
+import 'package:WireFrameFlutter/platforms/smsreading_screen.dart';
+import 'package:WireFrameFlutter/platforms/socketio_screen.dart';
 import 'package:WireFrameFlutter/platforms/web_view_scren.dart';
 import 'package:WireFrameFlutter/platforms/audio_record_screen.dart';
 import 'package:WireFrameFlutter/platforms/camera_screen.dart';
@@ -135,10 +138,38 @@ class HomePage extends StatelessWidget {
                     }));
                   },
                 ),
-                OutlineButton(
-                  child: Text("Rest API"),
-                  onPressed: () {},
+                  OutlineButton(
+                  child: Text("Sockets"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return SocketioScreen();
+                    }));
+                  },
                 ),
+                 OutlineButton(
+                  child: Text("Geolocation"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return GeolocationScreen();
+                    }));
+                  },
+                ),
+                 OutlineButton(
+                  child: Text("Sms Recieve"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return SmsReadingScreen();
+                    }));
+                  },
+                ),
+                
+                // OutlineButton(
+                //   child: Text("Rest API"),
+                //   onPressed: () {},
+                // ),
               ])),
     );
   }
